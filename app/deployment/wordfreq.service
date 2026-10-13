@@ -1,0 +1,25 @@
+[Unit]
+Description=WordFreq Worker Service
+ConditionPathExists=/home/ubuntu/aws-wordfreq-autoscaling-pipeline/app/deployment/run_worker.sh
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+Environment=GOPATH=/home/ubuntu/go
+Environment=GOROOT=/usr/local/go
+EnvironmentFile=-/etc/wordfreq/worker.env
+WorkingDirectory=/home/ubuntu/aws-wordfreq-autoscaling-pipeline/app
+ExecStart=/home/ubuntu/aws-wordfreq-autoscaling-pipeline/app/deployment/run_worker.sh
+
+# Make sure log directory exists and owned by syslog
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/wordfreqservice
+ExecStartPre=/bin/chown syslog:adm /var/log/wordfreqservice
+ExecStartPre=/bin/chmod 755 /var/log/wordfreqservice
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=wordfreqservice
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+instance_type,family,vcpu,memory_gib,processing_seconds,improvement_percent
+t2.micro,General purpose (previous generation),1,1,513,0.0
+t2.small,General purpose (previous generation),1,2,513,0.0
+t2.medium,General purpose (previous generation),2,4,453,11.7
+t2.large,General purpose (previous generation),2,8,333,35.1
+t3.micro,General purpose (Nitro),2,1,333,35.1
+c5.large,Compute optimised,2,4,333,35.1
+m5.large,General purpose,2,8,333,35.1

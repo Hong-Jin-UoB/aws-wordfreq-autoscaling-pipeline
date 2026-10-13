@@ -1,0 +1,22 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local configuration and credentials
+.env
+.env.*
+*.pem
+*.ppk
+*.key
+
+# Go build and test output
+app/bin/
+*.out
+coverage.*
+
+# Logs and temporary files
+*.log
+tmp/
+temp/

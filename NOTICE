@@ -1,0 +1,7 @@
+WordFreq application notice
+
+The application source in app/ is derived from the AWS WordFreq sample:
+https://github.com/aws-samples/aws-go-wordfreq-sample
+
+Copyright Amazon.com, Inc. or its affiliates.
+Licensed under the Apache License, Version 2.0. See LICENSE.
